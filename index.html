@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/lto2pzt.css">
+    <script src="/js/main.js" defer></script>
+    <title>Login</title>
+</head>
+
+<body>
+
+    <form class="form">
+        <div class="container">
+            <div><label>Email</label></div>
+            <input 
+            type="email" 
+            onchange="validateField()" 
+            name="email" 
+            id="email" 
+            placeholder="Email">
+        </div>
+
+        <div>
+            <div><label>Password</label></div>
+            <input 
+            type="password" 
+            name="password" 
+            placeholder="Password">
+
+        </div>
+
+        <div>
+            <button 
+            class = "forgot-password"
+            type="button" 
+            disabled="true">Forgot Password?</button>
+        </div>
+
+        <div>
+            <button 
+            class="btn-login" 
+            type="button" 
+            disabled="true" 
+            onclick="">Login</button>
+        </div>
+
+        <div>
+            <button 
+            class = "btn-register" 
+            type="button">Register</button>
+        </div>
+
+    </form>
+
+
+</body>
+
+</html>

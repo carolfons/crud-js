@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root {
+    font-size: 62.5%;
+  }
+
+body{
+    background: #00B4DB;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom,#087b55, #52b073);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom,#087b55, #52b073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    font-family: "omnes-variable", sans-serif;
+    font-variation-settings: "wdth" 100, "wght" 500;
+    align-items: center;
+
+   
+}
+
+.form {
+
+    background-color: antiquewhite;
+
+    padding: 4.8rem 6.4rem 6.4rem;
+
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.6rem;
+
+   
+}
+
+input{
+    margin-bottom: 15%;
+    padding: .6rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.6rem;
+    width: 100%;
+
+}
+
+button{
+    border-radius: 0.6rem;
+    padding: .6rem;
+    cursor: pointer;
+    margin-bottom: 5%;
+
+}
+
+.forgot-password{
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+
+.btn-register, .btn-login{
+    background:#087b55;
+    color: antiquewhite;
+    width: 100%;
+    padding: 5% 5rem;
+    box-shadow: 0 0.6rem 0.4rem rgba(0, 0, 0, 0.1);
+    border: none;
+
+}
+
+button:hover{
+    filter: brightness(1.2);
+}
