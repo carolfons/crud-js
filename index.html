@@ -1,65 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/lto2pzt.css">
-    <script src="/js/main.js" defer></script>
-    <title>Login</title>
+    <title>Controle de gastos</title>
 </head>
 
 <body>
-
     <form class="form">
-        <div class="container">
+        <div class="form-field">
             <div><label>Email</label></div>
-            <input 
-            type="email" 
-            onchange="validateFields()" 
-            name="email" 
-            id="email" 
-            placeholder="Email">
+            <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="onChangeEmail()"/>
+            <div class="error" id="email-required-error">Email é obrigatório</div>
+            <div class="error" id="email-invalid-error">Email é inválido</div>
         </div>
-
+        <div class="form-field">
+            <div><label>Senha</label></div>
+            <input type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()"/>
+            <div class="error" id="password-required-error">Senha é obrigatória</div>
+        </div>
         <div>
-            <div><label>Password</label></div>
-            <input 
-            onchange="validateFields()"
-            type="password" 
-            name="password" 
-            id="password"
-            placeholder="Password">
-
+            <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar senha</button>
         </div>
-
         <div>
-            <button 
-            class = "forgot-password"
-            id="recover-password-button"
-            type="button" 
-            disabled="true">Forgot Password?</button>
+            <button type="button" class="solid" id="login-button" disabled="true">Entrar</button>
         </div>
-
         <div>
-            <button 
-            id = "login-btn"
-            class="btn-login" 
-            type="button" 
-            disabled="true" 
-            onclick="">Login</button>
+            <button type="button" class="outline">Registrar</button>
         </div>
-
-        <div>
-            <button 
-            class = "btn-register" 
-            type="button">Register</button>
-        </div>
-
     </form>
-
-
 </body>
+
+<link rel="stylesheet" href="./styles/style.css">
+
+
+<script src="index.js"></script>
+<script src="validations.js"></script>
 
 </html>

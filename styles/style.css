@@ -56,13 +56,13 @@ button[disabled]{
 }
 
 
-.forgot-password{
+.clear{
     background: transparent;
     border: none;
     width: 100%;
 }
 
-.btn-register, .btn-login{
+.outline, .solid{
     background:#087b55;
     color: antiquewhite;
     width: 100%;
@@ -72,3 +72,7 @@ button[disabled]{
 
 }
 
+.error {
+    color: rgb(188, 0, 0);
+    display: none;
+} 
