@@ -51,6 +51,10 @@ button{
     margin-bottom: 5%;
 
 }
+button[disabled]{
+    opacity: 0.7;
+}
+
 
 .forgot-password{
     background: transparent;
@@ -68,6 +72,3 @@ button{
 
 }
 
-button:hover{
-    filter: brightness(1.2);
-}

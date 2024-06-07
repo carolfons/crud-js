@@ -17,7 +17,7 @@
             <div><label>Email</label></div>
             <input 
             type="email" 
-            onchange="validateField()" 
+            onchange="validateFields()" 
             name="email" 
             id="email" 
             placeholder="Email">
@@ -26,8 +26,10 @@
         <div>
             <div><label>Password</label></div>
             <input 
+            onchange="validateFields()"
             type="password" 
             name="password" 
+            id="password"
             placeholder="Password">
 
         </div>
@@ -35,12 +37,14 @@
         <div>
             <button 
             class = "forgot-password"
+            id="recover-password-button"
             type="button" 
             disabled="true">Forgot Password?</button>
         </div>
 
         <div>
             <button 
+            id = "login-btn"
             class="btn-login" 
             type="button" 
             disabled="true" 
