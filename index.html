@@ -20,13 +20,13 @@
             <div class="error" id="password-required-error">Senha é obrigatória</div>
         </div>
         <div>
-            <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar senha</button>
+            <button type="button" class="clear" id="recover-password-button" >Recuperar senha</button>
         </div>
         <div>
-            <button type="button" class="solid" id="login-button" disabled="true">Entrar</button>
+            <button onclick=" login()" type="button" class="solid" id="login-button" >Entrar</button>
         </div>
         <div>
-            <button type="button" class="outline">Registrar</button>
+            <button onclick="register()" type="button" class="outline">Registrar</button>
         </div>
     </form>
 </body>
@@ -34,7 +34,28 @@
 <link rel="stylesheet" href="./styles/style.css">
 
 
-<script src="index.js"></script>
-<script src="validations.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/validations.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyAf0774j3EjWydEVkkhioAKTCMyxGmD7LA",
+    authDomain: "controle-de-gastos-7cf46.firebaseapp.com",
+    projectId: "controle-de-gastos-7cf46",
+    storageBucket: "controle-de-gastos-7cf46.appspot.com",
+    messagingSenderId: "796325731086",
+    appId: "1:796325731086:web:6a1c8c2020e0460bcd155f"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  console.log('antes')
+  firebase.auth().signInWithEmailAndPassword("carolsantosfonseca@outlook.com", "123456").then(response => {
+    console.log('success', response)
+  }).catch(error => {
+    console.log('erro',error)
+  })
+  console.log('depois')
+</script>
 
 </html>
