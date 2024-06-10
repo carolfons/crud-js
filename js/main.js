@@ -9,7 +9,24 @@ function onChangePassword() {
 } 
 
 function login(){
+
+  firebase.auth().signInWithEmailAndPassword(form.email().value, form.password().value)
+  .then(response => {
+    console.log('success', response)
     window.location.href = "pages/home/home.html"
+  }).catch(error => {
+    console.log('erro',error)
+    alert(getErrorMessage(error))
+  })
+
+    
+}
+
+function getErrorMessage(error){
+    if(error.code == "auth/invalid-credential"){
+        return 'User Not Found'
+    }
+    return error.message;
 }
 
 function register(){
