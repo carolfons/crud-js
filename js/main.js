@@ -9,16 +9,19 @@ function onChangePassword() {
 } 
 
 function login(){
+    showLoading();
 
-  firebase.auth().signInWithEmailAndPassword(form.email().value, form.password().value)
+  firebase.auth().signInWithEmailAndPassword(
+    form.email().value, form.password().value)
   .then(response => {
+    hideLoading();
     console.log('success', response)
     window.location.href = "pages/home/home.html"
   }).catch(error => {
+    hideLoading();
     console.log('erro',error)
     alert(getErrorMessage(error))
   })
-
     
 }
 
@@ -30,7 +33,8 @@ function getErrorMessage(error){
 }
 
 function register(){
-    window.location.href = "pages/register/register.html"
+    // window.location.href = "pages/register/register.html"
+    showLoading();
 }
 
 function toggleEmailErrors() {
