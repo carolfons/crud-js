@@ -37,8 +37,10 @@ function getErrorMessage(error){
 }
 
 function register(){
-    // window.location.href = "pages/register/register.html"
+    
     showLoading();
+    setTimeout(()=>hideLoading(), 2000);
+    window.location.href = "pages/register/register.html"
 }
 
 function recoverPassword(){

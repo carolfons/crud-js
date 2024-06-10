@@ -1,71 +1,99 @@
 * {
-   
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
+
 :root {
     font-size: 62.5%;
-  }
 
-body{
-    margin: 0;
-    background: #00B4DB;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom,#087b55, #52b073);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom,#087b55, #52b073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*variaveis*/
 
+    --primary-green: #087b55;
+    --lighter-green: #52b073;
+    --red-error: rgb(188, 0, 0);
+    --form-bg-color: antiquewhite;
+
+}
+
+body {
+
+    /* background: #00B4DB; */
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, var(--primary-green), var(--lighter-green));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, var(--primary-green), var(--lighter-green));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /*align center*/
     display: grid;
     place-items: center;
-    height: 100vh;
-    font-family: "omnes-variable", sans-serif;
-    font-variation-settings: "wdth" 100, "wght" 500;
     align-items: center;
 
-   
+    height: 100vh;
+    font-family: "omnes-variable", sans-serif;
+    /* font-variation-settings: "wdth" 100, "wght" 500; */
+    
+
+
+}
+
+.image{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    width: 100%;
+}
+
+img{
+
+    width: 12rem;
+    height: 12rem;
 }
 
 .form {
-
-    background-color: antiquewhite;
-
+    background-color: var(--form-bg-color);
     padding: 4.8rem 6.4rem 6.4rem;
-
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
     border-radius: 0.6rem;
+    margin-bottom: 20rem;
 
-   
 }
 
-input{
+input {
     margin-bottom: 15%;
     padding: .6rem;
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
     border-radius: 0.6rem;
     width: 100%;
+    border: solid .5px var(--primary-green);
 
 }
 
-button{
+button {
     border-radius: 0.6rem;
     padding: .6rem;
     cursor: pointer;
     margin-bottom: 5%;
+    font-variation-settings: "wdth" 100, "wght" 660;
 
 }
-button[disabled]{
+
+button[disabled] {
     opacity: 0.7;
 }
 
 
-.clear{
+.clear {
     background: transparent;
     border: none;
     width: 100%;
 }
 
-.outline, .solid{
-    background:#087b55;
-    color: antiquewhite;
+.solid {
+    font-variation-settings: "wdth" 100, "wght" 660;
+    background: var(--primary-green);
+    color: var(--form-bg-color);
     width: 100%;
     padding: 5% 5rem;
     box-shadow: 0 0.6rem 0.4rem rgba(0, 0, 0, 0.1);
@@ -73,17 +101,27 @@ button[disabled]{
 
 }
 
-.error {
-    color: rgb(188, 0, 0);
-    display: none;
-} 
+.outline {
+    font-variation-settings: "wdth" 100, "wght" 660;
+    background-color: transparent;
+    border: solid 2px var(--primary-green);
+    color: #087b55;
+    width: 100%;
+    padding: 5% 5rem;
+    box-shadow: 0 0.6rem 0.4rem rgba(0, 0, 0, 0.1);
+}
 
-.loading{
-    background-color: rgba(0,0,0,0.7);
+.error {
+    color: var(--red-error);
+    display: none;
+}
+
+.loading {
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     width: 100%;
     height: 100%;
-    color: aliceblue;
+    color: var(--form-bg-color);
 
     /* centralizar */
 
@@ -93,7 +131,7 @@ button[disabled]{
 
 }
 
-.loading label{
+.loading label {
     font-size: 24px;
 }
 
@@ -101,17 +139,32 @@ button[disabled]{
 .loader {
     width: 85px;
     height: 50px;
-    --g1:conic-gradient(from  90deg at left   3px top   3px,#0000 90deg,#fff 0);
-    --g2:conic-gradient(from -90deg at bottom 3px right 3px,#0000 90deg,#fff 0);
-    background:var(--g1),var(--g1),var(--g1), var(--g2),var(--g2),var(--g2);
-    background-position: left,center,right;
+    --g1: conic-gradient(from 90deg at left 3px top 3px, #0000 90deg, #fff 0);
+    --g2: conic-gradient(from -90deg at bottom 3px right 3px, #0000 90deg, #fff 0);
+    background: var(--g1), var(--g1), var(--g1), var(--g2), var(--g2), var(--g2);
+    background-position: left, center, right;
     background-repeat: no-repeat;
     animation: l9 1s infinite;
-  }
-  @keyframes l9 {
-    0%   {background-size:25px 50% ,25px 50% ,25px 50%}
-    25%  {background-size:25px 100%,25px 50% ,25px 50%}
-    50%  {background-size:25px 50% ,25px 100%,25px 50%}
-    75%  {background-size:25px 50% ,25px 50% ,25px 100%}
-    100% {background-size:25px 50% ,25px 50% ,25px 50%}
-  }
+}
+
+@keyframes l9 {
+    0% {
+        background-size: 25px 50%, 25px 50%, 25px 50%
+    }
+
+    25% {
+        background-size: 25px 100%, 25px 50%, 25px 50%
+    }
+
+    50% {
+        background-size: 25px 50%, 25px 100%, 25px 50%
+    }
+
+    75% {
+        background-size: 25px 50%, 25px 50%, 25px 100%
+    }
+
+    100% {
+        background-size: 25px 50%, 25px 50%, 25px 50%
+    }
+}
