@@ -20,7 +20,7 @@ function login(){
   }).catch(error => {
     hideLoading();
     console.log('erro',error)
-    alert(getErrorMessage(error))
+    alert(error)
   })
     
 }
@@ -29,12 +29,30 @@ function getErrorMessage(error){
     if(error.code == "auth/invalid-credential"){
         return 'User Not Found'
     }
+
+    if(error.code == 'auth/wrong-password' ){
+        return 'Wrong Password :('
+    }
     return error.message;
 }
 
 function register(){
     // window.location.href = "pages/register/register.html"
     showLoading();
+}
+
+function recoverPassword(){
+    showLoading();
+
+    firebase.auth().sendPasswordResetEmail(form.email().value)
+    .then(() => {
+        hideLoading();
+        alert('Check your inbox :)');
+
+    }).catch(error => {
+        hideLoading();
+        alert(getErrorMessage(error));
+    });
 }
 
 function toggleEmailErrors() {
