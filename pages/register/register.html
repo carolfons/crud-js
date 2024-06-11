@@ -14,28 +14,38 @@
         <img src="/assets/Sem título (3).png" alt="logo-controle-financeiro">
     </div>
     <form class="form">
-        <div>
+        <div class='space'>
             <div><label>Email</label></div>
-            <input type="email" placeholder="Your@email.com" required>
+            <input type="email" id="email" placeholder="Your@email.com" onchange="onChangeEmail()" required>
+            <div class="error" id="email-required-error">Email required</div>
+            <div class="error" id="email-invalid-error">Invalid Email</div>
         </div>
-        <div>
-            <div><label>Password</label></div>
-            <input type="password" placeholder="Password">
+        <div class='space'>
+
+            <div><label>New Password</label></div>
+            <input type="password" id="password" placeholder="Password" onchange="onChangePassword()" required>
+            <div class="error" id="password-required-error">Password required</div>
+            <div class="error" id="password-min-length-error">Invalid password, at least 6 characters required.</div>
+
         </div>
-        <div>
-            <div><label>Confirm Password</label></div>
-            <input type="password" placeholder="Confirm Password">
+        <div class='space'>
+            <div><label>Verify New Password</label></div>
+            <input type="password" id="confirmPassword" placeholder="Verify New Password"
+                onchange="onChangeConfirmPassword()" required>
+            <div class="error" id="password-doesnt-match">Passwords doesn't match</div>
         </div>
-        <div>
-            <button type="button" class="solid">Register</button>
+        <div class='space'>
+            <button type="button" class="solid" disabled="true" id = "register-button">Register</button>
         </div>
-        <div>
-            <button type="button" class="outline">Go back to Login</button>
+        <div class='space'>
+            <button type="button" class="outline" id = "go-back-button">Go back to Login</button>
         </div>
     </form>
 
 </body>
 
 <link rel="stylesheet" href="../../styles/style.css">
+<script src="../../js/register.js"></script>
+<script src="../../js/validations.js"></script>
 
 </html>
